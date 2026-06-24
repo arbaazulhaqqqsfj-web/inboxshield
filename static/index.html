@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="InboxShield privacy-first multi-agent support triage demo">
+  <title>InboxShield — Safe support triage</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="InboxShield home">
+      <span class="shield">S</span>
+      <span>InboxShield</span>
+    </a>
+    <div class="status"><span></span> Demo system online</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PRIVACY-FIRST SUPPORT OPERATIONS</p>
+        <h1>Every ticket understood.<br><em>Every action controlled.</em></h1>
+        <p class="lede">A multi-agent system that screens untrusted messages, protects customer data, routes requests, checks policy, and drafts a safe response.</p>
+      </div>
+      <div class="flow-card" aria-label="Agent workflow">
+        <div><b>01</b><span>Security</span><small>Redact & defend</small></div>
+        <i>→</i>
+        <div><b>02</b><span>Intake</span><small>Classify & rank</small></div>
+        <i>→</i>
+        <div><b>03</b><span>Policy</span><small>Ground decisions</small></div>
+        <i>→</i>
+        <div><b>04</b><span>Response</span><small>Draft safely</small></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <form id="ticket-form" class="panel input-panel">
+        <div class="panel-title">
+          <div><span class="step">LIVE DEMO</span><h2>Incoming ticket</h2></div>
+          <button type="button" class="ghost" id="load-example">Load risky example</button>
+        </div>
+
+        <label>Subject
+          <input id="subject" maxlength="200" value="Charged twice and account locked" required>
+        </label>
+        <label>Customer message
+          <textarea id="message" rows="9" maxlength="10000" required>I was charged twice and now I cannot access my account. My email is alex@example.com and my phone is +44 7700 900123. Please help urgently.</textarea>
+        </label>
+        <div class="row">
+          <label>Customer tier
+            <select id="tier">
+              <option value="standard">Standard</option>
+              <option value="priority">Priority</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </label>
+          <label>Channel
+            <select id="channel">
+              <option value="email">Email</option>
+              <option value="chat">Chat</option>
+              <option value="web">Web form</option>
+            </select>
+          </label>
+        </div>
+        <p class="privacy">Ticket contents stay in this demo process. Detected personal data is redacted before downstream agents see it.</p>
+        <button class="primary" id="submit-button" type="submit">
+          <span>Run secure triage</span><b>→</b>
+        </button>
+      </form>
+
+      <section class="panel results-panel" aria-live="polite">
+        <div id="empty-state">
+          <div class="radar">S</div>
+          <h2>Ready for a ticket</h2>
+          <p>The agent decision, security controls, response draft, and complete audit trail will appear here.</p>
+        </div>
+
+        <div id="results" hidden>
+          <div class="result-head">
+            <div><span class="step">DECISION</span><h2 id="result-summary">Ticket triaged</h2></div>
+            <span id="review-badge" class="badge"></span>
+          </div>
+          <div class="metrics">
+            <div><small>Category</small><strong id="category"></strong></div>
+            <div><small>Urgency</small><strong id="urgency"></strong></div>
+            <div><small>Confidence</small><strong id="confidence"></strong></div>
+            <div><small>Queue</small><strong id="queue"></strong></div>
+          </div>
+
+          <div class="result-block">
+            <h3>Security gate</h3>
+            <p id="security-status"></p>
+            <ul id="findings"></ul>
+          </div>
+          <div class="result-block">
+            <h3>Safe message seen by agents</h3>
+            <p id="redacted" class="message"></p>
+          </div>
+          <div class="result-block response-block">
+            <h3>Suggested response</h3>
+            <p id="draft"></p>
+          </div>
+          <div class="result-block">
+            <h3>Required actions</h3>
+            <ol id="actions"></ol>
+          </div>
+          <details>
+            <summary>View agent audit trail</summary>
+            <div id="traces"></div>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <section class="principles">
+      <article><span>01</span><h3>Secure by sequence</h3><p>The security agent runs first. Raw untrusted text never reaches the decision agents.</p></article>
+      <article><span>02</span><h3>Policy-grounded</h3><p>Recommendations cite an explicit policy tool instead of inventing permissions.</p></article>
+      <article><span>03</span><h3>Human authority</h3><p>Risky or irreversible actions are escalated. The system drafts; people decide.</p></article>
+    </section>
+  </main>
+
+  <footer><span>InboxShield · Kaggle AI Agents Capstone 2026</span><span>No secrets. No silent actions. Full traceability.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
+

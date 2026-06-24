@@ -1,0 +1,2 @@
+Privacy-first multi-agent customer-support triage with MCP tools, prompt-injection defense, PII redaction, policy grounding, and human approval.
+
