@@ -13,6 +13,7 @@
 - [x] Kaggle writeup under 2,500 words
 - [x] Five-minute video script and shot list
 - [x] Open-source license
+- [x] YouTube demonstration uploaded as Unlisted
 
 ## Actions requiring your accounts
 
@@ -22,8 +23,7 @@
 4. Optional but recommended: deploy the Docker container to a public host.
 5. Replace `REPLACE_WITH_PUBLIC_DEMO_URL` with that URL. If you do not deploy,
    use the GitHub URL as the required project link.
-6. Record the demo using `VIDEO_SCRIPT.md`.
-7. Upload the video to YouTube as Public or Unlisted.
+6. YouTube video: https://youtu.be/23VSgyKXFOU
 8. Join the Kaggle hackathon and accept the rules.
 9. Open **Writeups → New Writeup**.
 10. Choose the **Agents for Business** track.
@@ -41,4 +41,3 @@
 Equivalent UK time: **July 7, 2026 at 7:59 AM BST**
 
 Submit at least 24 hours early if possible.
-

@@ -215,4 +215,4 @@ triage while keeping people in control.
 
 **Repository:** https://github.com/arbaazulhaqqqsfj-web/inboxshield  
 **Live demo:** Use the public repository and its local/Docker setup instructions.  
-**Video:** Attach the YouTube video from the Media Gallery.
+**Video:** https://youtu.be/23VSgyKXFOU
