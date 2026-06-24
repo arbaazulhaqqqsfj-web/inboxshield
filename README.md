@@ -78,11 +78,12 @@ python -m inboxshield.web
 
 Open <http://localhost:8080>.
 
-On Windows, you can also right-click `run_demo.ps1` and choose **Run with
-PowerShell**, or execute:
+On Windows, execute this from the project folder. The temporary
+`ExecutionPolicy Bypass` applies only to this one process and does not change
+your system setting:
 
 ```powershell
-.\run_demo.ps1
+powershell -ExecutionPolicy Bypass -File .\run_demo.ps1
 ```
 
 To run the tests:
@@ -94,7 +95,7 @@ python -m unittest discover -s tests -v
 Windows shortcut:
 
 ```powershell
-.\run_tests.ps1
+powershell -ExecutionPolicy Bypass -File .\run_tests.ps1
 ```
 
 To inspect the tool server:

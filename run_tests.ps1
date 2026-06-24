@@ -1,14 +1,17 @@
 $ErrorActionPreference = "Stop"
 
-$candidates = @(
-    (Get-Command python -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -ErrorAction SilentlyContinue),
-    (Get-Command py -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -ErrorAction SilentlyContinue),
-    "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-) | Where-Object { $_ -and (Test-Path $_) }
+$bundledPython = Join-Path $env:USERPROFILE ".cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+$pythonCommand = Get-Command python -ErrorAction SilentlyContinue
+$pyCommand = Get-Command py -ErrorAction SilentlyContinue
 
-if (-not $candidates) {
+if ($pythonCommand) {
+    $python = $pythonCommand.Source
+} elseif ($pyCommand) {
+    $python = $pyCommand.Source
+} elseif (Test-Path -LiteralPath $bundledPython) {
+    $python = $bundledPython
+} else {
     throw "Python 3.11+ was not found. Install Python from https://python.org and retry."
 }
 
-& $candidates[0] -m unittest discover -s tests -v
-
+& $python -m unittest discover -s tests -v
