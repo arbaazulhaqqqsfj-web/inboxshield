@@ -4,12 +4,12 @@ $bundledPython = Join-Path $env:USERPROFILE ".cache\codex-runtimes\codex-primary
 $pythonCommand = Get-Command python -ErrorAction SilentlyContinue
 $pyCommand = Get-Command py -ErrorAction SilentlyContinue
 
-if ($pythonCommand) {
-    $python = $pythonCommand.Source
-} elseif ($pyCommand) {
-    $python = $pyCommand.Source
-} elseif (Test-Path -LiteralPath $bundledPython) {
+if (Test-Path -LiteralPath $bundledPython) {
     $python = $bundledPython
+} elseif ($pythonCommand -and $pythonCommand.Source -notlike "*WindowsApps*") {
+    $python = $pythonCommand.Source
+} elseif ($pyCommand -and $pyCommand.Source -notlike "*WindowsApps*") {
+    $python = $pyCommand.Source
 } else {
     throw "Python 3.11+ was not found. Install Python from https://python.org and retry."
 }
