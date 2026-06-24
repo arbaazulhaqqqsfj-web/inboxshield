@@ -213,7 +213,6 @@ By combining multiple specialized agents, MCP tools, security-first sequencing,
 policy grounding, and a visible human-review boundary, it delivers fast support
 triage while keeping people in control.
 
-**Repository:** REPLACE_WITH_PUBLIC_GITHUB_URL  
-**Live demo:** REPLACE_WITH_PUBLIC_DEMO_URL  
+**Repository:** https://github.com/arbaazulhaqqqsfj-web/inboxshield  
+**Live demo:** Use the public repository and its local/Docker setup instructions.  
 **Video:** Attach the YouTube video from the Media Gallery.
-

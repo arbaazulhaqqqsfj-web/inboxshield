@@ -12,11 +12,10 @@ drafts a safe response, and keeps consequential actions behind human approval.
 Built for Kaggle's AI Agents: Intensive Vibe Coding Capstone Project 2026,
 Agents for Business track.
 
-Repository: REPLACE_WITH_PUBLIC_GITHUB_URL
-Demo: REPLACE_WITH_PUBLIC_DEMO_URL
+Repository: https://github.com/arbaazulhaqqqsfj-web/inboxshield
+Demo and setup instructions are available in the repository.
 
 # Tags
 
 AI agents, multi-agent system, MCP, AI security, prompt injection, privacy,
 customer support, Kaggle, Google, agentic AI
-
